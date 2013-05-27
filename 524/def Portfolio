@@ -1,0 +1,20 @@
+def Portfolio
+
+	@stocks = {}
+
+
+end
+
+
+
+
+
+
+
+
+my_portfolio.stocks
+=> {
+	'AAPL' => 50,
+	'MSFT' => 60,
+	'GOOG' => 20	
+}
