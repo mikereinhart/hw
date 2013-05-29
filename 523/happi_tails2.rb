@@ -52,18 +52,14 @@ class Client
 		puts @pets.each { |cur| "#{cur.name}"}.join(', ')
 	end
 
-	#def pet_to_shelter(name)
-	#	pets.pop(name)
-	#	@animals << name
-	#end
+	def pet_to_shelter(name)
+		pets.pop(name)
+		@animals << name
+	end
 
 end
 
-=begin
-reconsider the structure here. for animal, make all the methods that affect 
-an animal under the animal class. for instnace, adding an animal should be 
-a method of animal, not of the client or the shelter.
-=end
+
 
 class Animal
 
@@ -89,12 +85,19 @@ my_shelter.clients << dave
 my_shelter.clients << pat
 my_shelter.animals << buck
 my_shelter.animals << misty
+puts "Added Clients and Animals to HappiTails"
 mike.add_pet(buck)
 mike.add_pet(misty)
+puts 'Added Buck and Misty to the client Mike.'
+puts 'Here are the shelters animals:'
 my_shelter.print_animals
+puts 'Here are the shelters clients:'
 my_shelter.print_clients
+puts 'Heres Mike\'s pets:'
 mike.print_pets
-
+puts 'And now after trying to send a pet to the shelter:'
+mike.pet_to_shelter(misty)
+mike.print_pets
 
 
 

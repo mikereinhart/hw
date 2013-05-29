@@ -24,70 +24,85 @@ List animals in the shelter (up for adoption). DONE
 
 
 describe Shelter do
-	describe '#new_shelter' do
-		it 'builds a new Shelter' do
-			my_shelter = Shelter.new('HappiTails')
-			my_shelter.should be_instance_of Shelter
-			my_shelter.name.should == 'HappiTails'
-		end
-	end
+  describe '#new' do
+    it 'builds a new Shelter' do
+      my_shelter = Shelter.new('HappiTails')
+      my_shelter.should be_instance_of Shelter
+      my_shelter.name.should == 'HappiTails'
+    end
+  end
 
-	describe '#add_client' do 
-		it 'adds a new client to the shelter' do
-			my_shelter = Shelter.new('HappiTails')
-			new_client = my_shelter.add_client('Mike')
-			my_shelter.clients == 1
-		end
-	end
+  describe '#add_client' do
+    let(:shelter) { Shelter.new('HappiTails') }
+    let(:client) { Client.new('Mike') }
 
-	describe '#list_clients' do
-		it 'displays clients up for adoption' do
-			my_shelter = Shelter.new('HappiTails')
-			new_client = my_shelter.add_client('Mike')
-			new_client = my_shelter.add_client('Dave')
-			my_shelter.clients == 2
-			puts my_shelter.clients
-		end
-	end
+    it 'adds a new client to the shelter' do
+      shelter.clients == 1
+    end
 
-	describe '#add_animal' do
-		it 'adds a new animal to the shelter' do
-			my_shelter = Shelter.new('HappiTails')
-			new_animal = my_shelter.add_animal('Buck')
-			my_shelter.animals == 1
-		end
-	end
+    it 'allows the shelter to have multiple clients' do
+      new_client = Client.new('Dave')
+      shelter.clients == 2
+    end
+  end
 
-	describe '#list_animals' do
-		it 'displays animals up for adoption' do
-			my_shelter = Shelter.new('HappiTails')
-			new_animal = my_shelter.add_animal('Buck')
-			new_animal = my_shelter.add_animal('Misty')
-			my_shelter.animals == 2
-			puts my_shelter.animals
-		end
-	end
+  describe '#print_clients' do
+    it 'displays clients up for adoption' do
+      my_shelter = Shelter.new('HappiTails')
+      new_client = my_shelter.add_client('Mike')
+      new_client = my_shelter.add_client('Dave')
+      my_shelter.clients == 2
+      puts my_shelter.clients
+    end
+  end
+
+  describe '#add_animal' do
+    it 'adds a new animal to the shelter' do
+      my_shelter = Shelter.new('HappiTails')
+      new_animal = my_shelter.add_animal('Buck')
+      my_shelter.animals == 1
+    end
+  end
+
+  describe '#print_animals' do
+    it 'displays animals up for adoption' do
+      my_shelter = Shelter.new('HappiTails')
+      new_animal = my_shelter.add_animal('Buck')
+      new_animal = my_shelter.add_animal('Misty')
+      my_shelter.animals == 2
+      puts my_shelter.animals
+    end
+  end
 
 end
 
 
 
 describe Client do
-	describe '#new_client' do
-		it 'makes a new client' do
-			client = Client.new('Mike')
-			client.should be_instance_of Client
-			client.name.should == 'Mike'
-		end
-	end
+  describe '#new' do
+    it 'makes a new client' do
+      client = Client.new('Mike')
+      client.should be_instance_of Client
+      client.name.should == 'Mike'
+    end
+  end
 
-	describe '#add_pet' do
-		it 'adds a new pet to the client' do
-			client = Client.new('Mike')
-			new_pet = client.add_pet('Buck')
-			client.pets == 1
-		end
-	end
+  describe '#add_pet' do
+    it 'adds a new pet to the client' do
+      client = Client.new('Mike')
+      new_pet = client.add_pet('Buck')
+      client.pets == 1
+    end
+  end
+
+  describe '#print_pets' do
+    it 'prints out a list of the client\'s pets' do
+      client = Client.new('Mike')
+      pet_1 = client.add_pet('Buck')
+      pet_2 = client.add_pet('Misty')
+      puts client.pets
+    end
+  end
 =begin
 	describe '#pet_to_shelter' do
 		it 'removes pet and adds it to the shelter' do
@@ -105,12 +120,12 @@ end
 
 
 describe Animal do
-	describe '#new_animal' do
-		it 'makes a new animal' do
-			animal = Animal.new('Buck')
-			animal.should be_instance_of Animal
-			animal.name.should == 'Buck'
-		end
-	end
+  describe '#new_animal' do
+    it 'makes a new animal' do
+      animal = Animal.new('Buck')
+      animal.should be_instance_of Animal
+      animal.name.should == 'Buck'
+    end
+  end
 
 end
