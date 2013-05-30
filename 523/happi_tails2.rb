@@ -10,13 +10,13 @@ class Shelter
 		@animals = []
 	end
 
-	def add_client(name)
-		client = Client.new(name)
+	def add_client(name, age, sex, kids)
+		client = Client.new(name, age, sex, kids)
 		@clients << client
 	end
 
-	def add_animal(name)
-		animal = Animal.new(name)
+	def add_animal(name, breed, age, sex)
+		animal = Animal.new(name, breed, age, sex)
 		@animals << animal
 	end
 
@@ -29,21 +29,30 @@ class Shelter
 		puts "These animals are available at HappiTails!"
 		puts @animals.map { |cur| "#{cur.name}"}.join(', ')
 	end
+
+	def adoption(name)
+		@animals.pop(name)
+		clint.pets << animal
+	end
+
 end
 
 
 
 class Client
 
-	attr_accessor :name, :pets
+	attr_accessor :name, :age, :sex, :kids, :pets
 
-	def initialize(name)
+	def initialize(name, age, sex, kids)
 		@name = name
+		@age = age
+		@sex = sex
+		@kids = kids
 		@pets = []
 	end
 
-	def add_pet(name)
-		pet = Animal.new(name)
+	def add_pet(name, breed, age, sex)
+		pet = Animal.new(name, breed, age, sex)
 		@pets << pet
 	end
 
@@ -57,28 +66,35 @@ class Client
 		@animals << name
 	end
 
+	def adopt_pet(name)
+		
+
 end
 
 
 
 class Animal
 
-	attr_accessor :name
+	attr_accessor :name, :breed, :age, :sex, :fav_toys
 
-	def initialize(name)
+	def initialize(name, breed, age, sex)
 		@name = name
+		@breed = breed
+		@age = age
+		@sex = sex
+		fav_toys = []
 	end
 
 end
 
 
 my_shelter = Shelter.new('HappiTails')
-mike = Client.new('Mike')
-dave = Client.new('Dave')
-pat = Client.new('Pat')
-henry = Animal.new('Henry')
-buck = Animal.new('Buck')
-misty = Animal.new('Misty')
+mike = Client.new('Mike', 24, 'Male', 3)
+dave = Client.new('Dave', 62, 'Male', 2)
+pat = Client.new('Pat', 63, 'Female', 2)
+henry = Animal.new('Henry', 'Fish', 1, 'Male')
+buck = Animal.new('Buck', 'Golden', 4, 'Male')
+misty = Animal.new('Misty', 'Mutt', 12, 'Male')
 
 my_shelter.clients << mike
 my_shelter.clients << dave
@@ -98,6 +114,5 @@ mike.print_pets
 puts 'And now after trying to send a pet to the shelter:'
 mike.pet_to_shelter(misty)
 mike.print_pets
-
 
 
