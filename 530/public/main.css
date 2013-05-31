@@ -1,0 +1,22 @@
+.cntr_btn {
+	margin-left: 60px;
+}
+ body {
+ 	background-color: #4867d6;
+ }
+
+ .home_text {
+ 	color: #c6bfbf;
+ }
+
+ .link_text {
+ 	color: #732b2b;
+ }
+
+ ul, li {
+    list-style-type: none;
+}
+
+.friend_header {
+	font-size: 40px;
+}

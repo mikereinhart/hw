@@ -1,0 +1,15 @@
+<h1 class:'home_text'>Your Friendly Friends</h1>
+<br><br>
+
+<ul class='home_text'>
+	<% @friends.each do |friend| %>
+	<li class='friend_head'><%=friend['name']%></li>
+	<li><img src="<%=friend['image']%>"></li>
+	<li><%=friend['age']%></li>
+	<li><%=friend['gender']%></li>
+	<li><a class='link_text' href="<%=friend['twitter_url']%>">Twitter</a></li>
+	<li><a class='link_text' href="<%=friend['github_url']%>">GitHub</a></li>
+	<li><a class='link_text' href="<%=friend['facebook_url']%>">Facebook</a></li>
+	<br><br>
+	<% end %>
+</ul>
