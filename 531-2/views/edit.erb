@@ -1,0 +1,11 @@
+
+<div class='container'>
+	Edit <%= @row['title'] %>
+	<form method='post' action='/videos/<%= @row['id'] %>/'>
+		<input type='text' name='title' value="<%= @row['title'] %>">
+		<input type='text' name='description' value="<%= @row['description'] %>">
+		<input type='text' name='url' value="<%= @row['url'] %>">
+		<input type='text' name='genre' value="<%= @row['genre'] %>">
+		<button>Save Changes</button>
+	</form>
+</div>

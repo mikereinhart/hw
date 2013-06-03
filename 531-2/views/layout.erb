@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<title>Video Store</title>
+
+<head>
+	<link rel='stylesheet' href='/bootstrap/css/bootstrap.css'>
+	<script src='/js/jquery-2.0.1.min.js'></script>
+	<script src='/bootstrap/js/bootstrap.js'></script>
+	<link rel='stylesheet' src='/main.css'>
+</head>
+<body>
+	<div class='container'>
+		<div class='navbar navbar-inverse'>
+			<div class='navbar-inner'>
+				<div class='container-fluid'>
+					<a class='brand title-text' href='/'>Mike's Video Library</a>
+					<div class='nav-collapse collapse'>
+						<ul class='nav'>
+							<li><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+							<li><a href="/videos"><i class="icon-film icon-white"></i> Videos</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	<%= yield %>
+	</div>
+</body>
+</html>

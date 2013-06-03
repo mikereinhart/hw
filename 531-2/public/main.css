@@ -1,0 +1,23 @@
+.cust-btn {
+	color: #53471D;
+}
+
+.movie-text {
+	margin-left: 15px;
+}
+
+.edit-delete {
+	color: #53471D;
+	text-decoration: none;
+}
+
+body {
+	background-color: #9e95d7;
+}
+
+#for-form {
+	margin: 10px auto 0 auto;
+}
+.my_text {
+	color: #8f66ae;
+}

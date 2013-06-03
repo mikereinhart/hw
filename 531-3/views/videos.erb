@@ -1,0 +1,18 @@
+
+<div class='container'>
+	<% @rows.each do |row| %>
+		<div class='container'>
+				<div class='span4'>
+					<ul>
+						<br> <br>
+						<h4 class='movie-text'><%= "#{row['title'].capitalize}" %></h4>
+						<p class='movie-text'><%= "Genre: #{row['genre'].capitalize}" %></p>
+						<p class='movie-text'><%= "Description: #{row['description'].capitalize}"%></p>
+						<p class='movie-text'><a href="/videos/<%=row['id']%>/edit/">Edit</a> or <a href="/videos/<%=row['id']%>/delete/">Delete</a> this movie</p>
+					</ul>
+				</div>
+			<iframe width='560' height='315' src="<%= row['url'] %>"></iframe>
+		</div>
+	<% end %>
+
+</div>

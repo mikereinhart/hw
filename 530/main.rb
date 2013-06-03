@@ -44,3 +44,7 @@ post '/create' do
 	redirect to('/')
 end
 
+
+#create another method where you can delete a friend, utilizing 'DELETE FROM friend WHERE name is name'
+
+
