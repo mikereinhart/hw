@@ -2,9 +2,9 @@ INDEX PAGE! <br> <br>
 
 <% @films.each do |film| %>
 	<%= film.title %> <br/>
-	<%= film.description %> <br/>
-	<%= film.director %> <br/>
-	<%= film.writer %> <br/>
+	Description: <%= film.description %> <br/>
+	Director: <%= film.director %> <br/>
+	Writer: <%= film.writer %> <br/>
 	<%= link_to 'Edit', edit_film_path(film) %> <br/>
 	<%= link_to 'Delete', film_path(film), method: :delete %> <br/> <br>
 <% end %>

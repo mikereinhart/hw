@@ -30,9 +30,14 @@ class Shelter
 		puts @animals.map { |cur| "#{cur.name}"}.join(', ')
 	end
 
-	def adoption(name)
+	def adopt(name)
 		@animals.pop(name)
-		clint.pets << animal
+		client.pets << animal
+	end
+
+	def get_animal(pet_name, client)
+		client.pets.pop(pet_name)
+		@animals << pet_name
 	end
 
 end
@@ -43,12 +48,14 @@ class Client
 
 	attr_accessor :name, :age, :sex, :kids, :pets
 
-	def initialize(name, age, sex, kids)
+	def initialize(name, age, sex, kids, pets_list = [])
+		#petS_lists starting as an empty array is a dafault value.
+		#if it not assigned, it defaults to an empty array.
 		@name = name
 		@age = age
 		@sex = sex
 		@kids = kids
-		@pets = []
+		@pets = pets_list
 	end
 
 	def add_pet(name, breed, age, sex)
@@ -61,13 +68,14 @@ class Client
 		puts @pets.each { |cur| "#{cur.name}"}.join(', ')
 	end
 
-	def pet_to_shelter(name)
-		pets.pop(name)
+	def pet_to_shelter(name, shelter)
+		pets.pop(name )
 		@animals << name
 	end
 
 	def adopt_pet(name)
-		
+
+	end
 
 end
 
