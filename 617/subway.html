@@ -1,0 +1,209 @@
+<!--
+The program takes the line and stop that a user is getting on at and the line and stop that user is getting off at and prints the total number of stops for the trip. 
+
+There are 3 subway lines:
+the N line has the following stops: Times Square, 34th, 28th, 23rd, Union Square, and 8th
+The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
+the 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place
+
+All 3 subway lines intersect at Union Square, but there are no other intersection points (for example, this means the 28th stop on the N line is different than the 28th stop on the 6 line.)
+-->
+
+<html>
+Subway App - Javascript Style
+  <script>
+
+    var n = ['tsn', '34n', '28n', '23n', 'usn', '8n']
+    var l = ['8l', '6l', 'usl', '3l', '1l']
+    var s = ['gc6', '336', '286', '236', 'un6', 'ap6']
+
+
+    var startLine,
+        startStop,
+        endLine,
+        endStop,
+        stops;
+
+
+//GETTING ON THE SUBWAY
+    startLine = prompt('What line are you getting on? the (n) N Line, (l) L Line, or (s) S Line?')
+      switch(startLine) {
+        case 'n':
+          console.log('You are getting on the N Line.')
+          startStop = prompt('What stop are you getting on? (tsn) Times Square, (34n) 34th Street, (28n) 28th Street, (23n) 23rd Street, (us) Union Square, or (8n) 8th Street?')
+            switch(startStop) {
+              case 'tsn':
+                console.log('You are getting on at Times Square.')
+                break
+              case '34n':
+                console.log('You are getting on at 34th Street.')
+                break
+              case '28n':
+                console.log('You are getting on at 28th Street.')
+                break
+              case '23n':
+                console.log('You are getting on at 23rd Street.')
+                break
+              case 'us':
+                console.log('You are getting on at Union Square.')
+                break
+              case '8n':
+                console.log('You are getting on at 8th Street.')  
+                break
+              default:
+                console.log('You did not enter a valid subway stop.')
+              }
+          break
+        case 'l':
+          console.log('You are getting on the L Line.')
+          startStop = prompt('What stop are you getting on? (8l) 8th Ave, (6l) 6th Ave, (us) Union Square, (3l) 3rd Ave, or (1l) 1st Ave?')
+            switch(startStop) {
+              case '8l':
+                console.log('You are getting on at 8th Ave.')
+                break
+              case '6l':
+                console.log('You are getting on at 6th Ave.')
+                break
+              case 'us':
+                console.log('You are getting on at Union Square.')
+                break
+              case '3l':
+                console.log('You are getting on at 3rd Ave.')
+                break
+              case '1l':
+                console.log('You are getting on at 1st Ave.')
+                break
+              default:
+                console.log('You did not enter a valid subway stop.')
+              }
+          break
+        case 's':
+          console.log('You are getting on the 6 Line.')
+          startStop = prompt("What stop are you getting on? (gc6) Grand Central Station, (336) 33rd Street, (286) 28th Street, (236) 23rd Street, (us) Union Square, or (ap6) Astor Place?")
+            switch(startStop) {
+              case 'gc6':
+                console.log('You are getting on at Grand Central.')
+                break
+              case '336':
+                console.log('You are getting on at 33rd Street.')
+                break
+              case '286':
+                console.log('You are getting on at 28th Street.')
+                break
+              case '236':
+                console.log('You are getting on at 23rd Street.')
+                break
+              case 'us':
+                console.log('You are getting on at Union Square.')
+                break
+              case 'ap6':
+                console.log('You are getting on at Astor Place.')
+                break
+              default:
+                console.log('You did not enter a valid subway stop.')
+              }
+          break
+        default:
+          console.log('Please enter n for the N Line, l for the L Line, or s for the 6 Line.')
+      }
+  
+
+
+// GETTING OFF THE SUBWAY
+    endLine = prompt('What line are you getting off? the (n) N Line, (l) L Line, or (s) S Line?')
+      switch(endLine) {
+        case 'n':
+          console.log('You are getting off from the N Line.')
+          endStop = prompt('What stop are you getting off? (tsn) Times Square, (34n) 34th Street, (28n) 28th Street, (23n) 23rd Street, (us) Union Square, or (8n) 8th Street?')
+            switch(endStop) {
+              case 'tsn':
+                console.log('You are getting off at Times Square.')
+                break
+              case '34n':
+                console.log('You are getting off at 34th Street.')
+                break
+              case '28n':
+                console.log('You are getting off at 28th Street.')
+                break
+              case '23n':
+                console.log('You are getting off at 23rd Street.')
+                break
+              case 'us':
+                console.log('You are getting off at Union Square.')
+                break
+              case '8n':
+                console.log('You are getting off at 8th Street.')  
+                break
+              default:
+                console.log('You did not enter a valid subway stop.')
+              }
+          break
+        case 'l':
+          console.log('You are getting off the L Line.')
+          endStop = prompt('What stop are you getting off? (8l) 8th Ave, (6l) 6th Ave, (us) Union Square, (3l) 3rd Ave, or (1l) 1st Ave?')
+            switch(endStop) {
+              case '8l':
+                console.log('You are getting off at 8th Ave.')
+                break
+              case '6l':
+                console.log('You are getting off at 6th Ave.')
+                break
+              case 'us':
+                console.log('You are getting off at Union Square.')
+                break
+              case '3l':
+                console.log('You are getting off at 3rd Ave.')
+                break
+              case '1l':
+                console.log('You are getting off at 1st Ave.')
+                break
+              default:
+                console.log('You did not enter a valid subway stop.')
+              }
+          break
+        case 's':
+          console.log('You are getting off from the 6 Line.')
+          endStop = prompt("What stop are you getting off? (gc6) Grand Central Station, (336) 33rd Street, (286) 28th Street, (236) 23rd Street, (us) Union Square, or (ap6) Astor Place?")
+            switch(endStop) {
+              case 'gc6':
+                console.log('You are getting off at Grand Central.')
+                break
+              case '336':
+                console.log('You are getting off at 33rd Street.')
+                break
+              case '286':
+                console.log('You are getting off at 28th Street.')
+                break
+              case '236':
+                console.log('You are getting off at 23rd Street.')
+                break
+              case 'us':
+                console.log('You are getting off at Union Square.')
+                break
+              case 'ap6':
+                console.log('You are getting off at Astor Place.')
+                break
+              default:
+                console.log('You did not enter a valid subway stop.')
+              }
+          break
+        default:
+          console.log('Please enter n for the N Line, l for the L Line, or s for the 6 Line.')
+      }
+
+
+    //function trip(startLine, endLine, startStop, endStop)
+    
+    if(startLine === endLine) 
+    {
+      return distance = Math.abs((startLine.indexOf(startStop)) - (endLine.indexOf(endStop)))
+    }
+    else 
+    {
+      firstLine = Math.abs(startLine.indexOf(startStop) - startLine.indexOf('us'))
+      //below here hasnt been updated withthe bad method
+      secondLine = Math.abs(endLine['us'] - endLine[endStop])
+      alert(firstLine + secondLine)
+    }
+  </script>
+</html>

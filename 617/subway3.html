@@ -1,0 +1,68 @@
+<!--
+The program takes the line and stop that a user is getting on at and the line and stop that user is getting off at and prints the total number of stops for the trip. 
+
+There are 3 subway lines:
+the N line has the following stops: Times Square, 34th, 28th, 23rd, Union Square, and 8th
+The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
+the 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place
+
+All 3 subway lines intersect at Union Square, but there are no other intersection points (for example, this means the 28th stop on the N line is different than the 28th stop on the 6 line.)
+-->
+
+<html>
+Subway App - Javascript Style
+  <script>
+
+  /*We define each variable in terms of the function we pass it through. What is returned from that function will be assigned to that variable. The paramater that we pass thru getLine (startStop) calls the string for startLine or stopLine. This adjusts the prompt statement to 'start' or 'stop' depending on which variable we are passing through. */
+  var startLine = getLine('start')
+  var startStation = getStation(startLine)
+  var stopLine = getLine('stop')
+  var stopStation = getStation(stopLine)
+
+  //this method finds out what the start and stop LINES are
+  function getLine(startOrStop) {
+    var line = 'a'
+    while (line != 'n' && line != 'l' && line != '6') {
+      line = prompt("Where will you " + startOrStop + " your trip? \nn - N Line \nl - L Line \n6 - 6 Line")
+      }
+      return line
+  }
+
+  //this method finds out what the start and stop STATIONS are
+  function getStation(which_line) {
+    var station = 'a'
+    switch(which_line) {
+      case 'n':
+        while (station != '1' && station != '2' && station != '3' && station != '4' && station != '5' && station != '6') {
+          station  = prompt("Which station? \n1 - Times Square \n2 - 34th Street \n3 - 28th Street \n4 - 23rd Street \n5 - Union Square \n6 - 8th Street")
+        }
+        break
+      case 'l':
+        while (station != '1' && station != '2' && station != '3' && station != '4' && station != '5') {
+          station = prompt("Which station? \n1 - 8th Ave \n2 - 6th Ave \n3 - Union Square \n4 - 3rd Ave \n5 - 1st Ave")
+        }
+        break
+      case '6':
+        while (station != '1' && station != '2' && station != '3' && station != '4' && station != '5' && station != '6') {
+          station = prompt("Which station? \n1 - Grand Central \n2 - 33rd Street \n3 - 28th Street \n4 - 23rd Street \n5 - Union Square \n6 - Astor Place")
+        }
+        break
+    }
+    return station 
+  }
+
+  //Math to return our number of stops traveled
+  if (startLine === stopLine) {
+    alert("You will be traveling " + Math.abs(startStation - stopStation) + " stops.")
+  }
+  else {
+    if (startLine === 'l') {
+      var us = 3
+      }
+    else {
+      us = 5
+      }
+    alert("You will be traveling " + (Math.abs(startStation - us) + Math.abs(stopStation - us)) + " stops.")
+  }
+  </script>
+</html>
