@@ -19,6 +19,7 @@ Subway App - Javascript Style
   var stopLine = getLine('stop')
   var stopStation = getStation(stopLine)
 
+
   //this method finds out what the start and stop LINES are
   function getLine(startOrStop) {
     var line = 'a'
@@ -56,13 +57,24 @@ Subway App - Javascript Style
     alert("You will be traveling " + Math.abs(startStation - stopStation) + " stops.")
   }
   else {
+    
     if (startLine === 'l') {
       var us = 3
       }
     else {
       us = 5
       }
-    alert("You will be traveling " + (Math.abs(startStation - us) + Math.abs(stopStation - us)) + " stops.")
-  }
+    firstLeg = Math.abs(startStation - us)
+
+    if (stopLine === 'l') {
+      var us = 3
+      }
+    else {
+      us = 5
+      }
+    secondLeg = Math.abs(stopStation - us)
+    }
+    alert("You will be traveling " + (firstLeg + secondLeg) + " stops.")
+    //alert("You will be traveling " + (Math.abs(startStation - us) + Math.abs(stopStation - us)) + " stops.")
   </script>
 </html>

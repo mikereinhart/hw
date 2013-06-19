@@ -1,0 +1,55 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+
+    var player = '';
+
+    var tic_tac_toe_array = [
+        [1, 1, 1],
+        [0, -1, 0],
+        [0, 0, 0]
+        ]
+
+
+    function check_winner1() {
+      var length = tic_tac_toe_array.length
+
+      for(i=0; i<length; i++) {
+        var x = tic_tac_toe_array[0][0]
+        if (x == tic_tac_toe_array[0][i]) {
+          if (i == 2) {
+            alert('You Won!');
+            console.log(i)
+          }
+        }
+      }
+    }
+
+    function check_winner2() {
+      var length = tic_tac_toe_array.length
+
+      if (tic_tac_toe_array[0][0] + tic_tac_toe_array[0][1] + tic_tac_toe_array[0][2] === 3) {
+        alert('2 is the winner!');
+        }
+      }
+    </script>
+
+  </body>
+</html>
+
+<!--HORIZONTAL COLUMNS -->
+Math.abs((tic_tac_toe_array[0][0] + tic_tac_toe_array[0][1] + tic_tac_toe_array[0][2]) === 3
+Math.abs((tic_tac_toe_array[1][0] + tic_tac_toe_array[1][1] + tic_tac_toe_array[1][2]) === 3
+Math.abs((tic_tac_toe_array[2][0] + tic_tac_toe_array[2][1] + tic_tac_toe_array[2][2]) === 3
+
+<!-- VERTICAL COLUMNS -->
+Math.abs((tic_tac_toe_array[0][0] + tic_tac_toe_array[1][0] + tic_tac_toe_array[2][0]) === 3
+Math.abs((tic_tac_toe_array[0][1] + tic_tac_toe_array[1][1] + tic_tac_toe_array[2][1]) === 3
+Math.abs((tic_tac_toe_array[0][2] + tic_tac_toe_array[1][2] + tic_tac_toe_array[2][2]) === 3
+
+<!-- DIAGONAL -->
+Math.abs((tic_tac_toe_array[0][0] + tic_tac_toe_array[1][1] + tic_tac_toe_array[2][2]) === 3
+Math.abs((tic_tac_toe_array[0][2] + tic_tac_toe_array[1][1] + tic_tac_toe_array[2][0]) === 3
