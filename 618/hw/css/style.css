@@ -1,3 +1,15 @@
+/*body {
+  margin: 20px auto 0 30px;
+}*/
+
+table {
+  margin: 0 auto 0 auto;
+}
+
+h1{
+  text-align: center;
+}
+
 .block {
   width: 100px;
   height: 100px;
@@ -10,4 +22,8 @@
 
 .negative {
   background: blue;
+}
+
+.blank {
+  background: white;
 }
