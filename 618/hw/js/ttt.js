@@ -6,13 +6,18 @@ X or O will not equal 3, making it a safe way to determine a winner.
 
 var turn = 1;
 var board = [
-      [1, 1, 1],
-      [1, 1, 0],
-      [1, 0, 0]
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
       ];
 
 var game_finished = false;
 
+function check_all() {
+  check_rows();
+  check_columns();
+  check_diag();
+}
 
 function check_rows() {
   if (game_finished === false) {
@@ -46,12 +51,6 @@ function check_diag() {
   }
 }
 
-function check_win() {
-  row_check();
-  column_check();
-  diagonal_check();
-}
-
 function box_click() {
   var box_id = $(this).attr('id'); //Ex. id='box_0_0'
 
@@ -61,11 +60,16 @@ function box_click() {
   if (turn % 2 === 0) {
     board[row][column] = 1;
     $(this).addClass('positive');
-  } else {
+  }
+  else {
     board[row][column] = -1;
     $(this).addClass('negative');
   }
   turn ++;
+  check_all();
+  if (turn === 10) {
+    alert('Nobody won! How typical!');
+  }
 }
 
 function game_over() {
