@@ -46,7 +46,7 @@ function check_diag() {
 }
 function box_click() {
   if (!game_finished) {
-  $('#reset_button').hide();
+  // $('#reset_button').hide();
   var box_id = $(this).attr('id'); //Ex. id='box_0_0'
   row = parseInt(box_id.slice(4, 5));
   column = parseInt(box_id.slice(6, 7));
