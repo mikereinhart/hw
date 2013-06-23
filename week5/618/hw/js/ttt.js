@@ -4,19 +4,21 @@ check to see it equals 3. Any other combination besides 3 of either
 X or O will not equal 3, making it a safe way to determine a winner.
 */
 var game_finished = false;
-var turn = 1;
+var turn = 0;
 var board = [
       [0, 0, 0],
       [0, 0, 0],
       [0, 0, 0]
       ];
+
 function check_all() {
   check_rows();
   check_columns();
   check_diag();
 }
+
 function check_rows() {
-  if (game_finished === false) {
+  if (!game_finished) {
     var length = board.length;
     for(r=0; r<length; r++)
       if (Math.abs(board[r][0] + board[r][1] + board[r][2]) === 3) {
@@ -24,8 +26,9 @@ function check_rows() {
       }
   }
 }
+
 function check_columns() {
-  if (game_finished === false) {
+  if (!game_finished) {
     var length = board.length;
     for(c=0; c<length; c++)
       if (Math.abs(board[0][c] + board[1][c] + board[2][c]) === 3) {
@@ -33,9 +36,9 @@ function check_columns() {
       }
   }
 }
+
 function check_diag() {
   if (!game_finished) {
-    var length = board.length;
     if (Math.abs(board[0][0] + board[1][1] + board[2][2]) === 3) {
       game_over();
     }
@@ -44,9 +47,9 @@ function check_diag() {
     }
   }
 }
+
 function box_click() {
   if (!game_finished) {
-  // $('#reset_button').hide();
   var box_id = $(this).attr('id'); //Ex. id='box_0_0'
   row = parseInt(box_id.slice(4, 5));
   column = parseInt(box_id.slice(6, 7));
@@ -57,19 +60,21 @@ function box_click() {
     board[row][column] = -1;
     $(this).addClass('negative');
   }
-  turn ++;
   check_all();
+  turn ++;
   if ((turn > 9) && (!game_finished)) {
     $('#reset_button').show();
     alert('Nobody won! How typical!');
     }
   }
 }
+
 function game_over() {
   $('#reset_button').show();
   alert("You've won! The game is over!");
   game_finished = true;
 }
+
 function reset_game() {
   board = [
       [0, 0, 0],
